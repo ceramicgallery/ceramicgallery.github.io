@@ -10,6 +10,376 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"> -->
+    <style>
+        .card {
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-color: #fff;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem
+        }
+
+        ul {
+            padding-left: 5px;
+        }
+
+        .card>hr {
+            margin-right: 0;
+            margin-left: 0
+        }
+
+        .card>.list-group:first-child .list-group-item:first-child {
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem
+        }
+
+        .card>.list-group:last-child .list-group-item:last-child {
+            border-bottom-right-radius: .25rem;
+            border-bottom-left-radius: .25rem
+        }
+
+        .card-body {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            padding: 1.25rem
+        }
+
+        .card-title {
+            margin-bottom: .75rem
+        }
+
+        .card-subtitle {
+            margin-top: -.375rem;
+            margin-bottom: 0
+        }
+
+        .card-text:last-child {
+            margin-bottom: 0
+        }
+
+        .card-link:hover {
+            text-decoration: none
+        }
+
+        .card-link+.card-link {
+            margin-left: 1.25rem
+        }
+
+        .card-header {
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            color: inherit;
+            background-color: rgba(0, 0, 0, .03);
+            border-bottom: 1px solid rgba(0, 0, 0, .125)
+        }
+
+        .card-header:first-child {
+            border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+        }
+
+        .card-header+.list-group .list-group-item:first-child {
+            border-top: 0
+        }
+
+        .card-footer {
+            padding: .75rem 1.25rem;
+            background-color: rgba(0, 0, 0, .03);
+            border-top: 1px solid rgba(0, 0, 0, .125)
+        }
+
+        .card-footer:last-child {
+            border-radius: 0 0 calc(.25rem - 1px) calc(.25rem - 1px)
+        }
+
+        .card-header-tabs {
+            margin-right: -.625rem;
+            margin-bottom: -.75rem;
+            margin-left: -.625rem;
+            border-bottom: 0
+        }
+
+        .card-header-pills {
+            margin-right: -.625rem;
+            margin-left: -.625rem
+        }
+
+        .card-img-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1.25rem
+        }
+
+        .card-img {
+            width: 100%;
+            border-radius: calc(.25rem - 1px)
+        }
+
+        .card-img-top {
+            width: 100%;
+            border-top-left-radius: calc(.25rem - 1px);
+            border-top-right-radius: calc(.25rem - 1px)
+        }
+
+        .card-img-bottom {
+            width: 100%;
+            border-bottom-right-radius: calc(.25rem - 1px);
+            border-bottom-left-radius: calc(.25rem - 1px)
+        }
+
+        .card-deck {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+
+        .card-deck .card {
+            margin-bottom: 15px
+        }
+
+        @media (min-width:576px) {
+            .card-deck {
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+                margin-right: -15px;
+                margin-left: -15px
+            }
+
+            .card-deck .card {
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex: 1 0 0%;
+                flex: 1 0 0%;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                margin-right: 15px;
+                margin-bottom: 0;
+                margin-left: 15px
+            }
+        }
+
+        .card-group {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column
+        }
+
+        .card-group>.card {
+            margin-bottom: 15px
+        }
+
+        @media (min-width:576px) {
+            .card-group {
+                -ms-flex-flow: row wrap;
+                flex-flow: row wrap
+            }
+
+            .card-group>.card {
+                -ms-flex: 1 0 0%;
+                flex: 1 0 0%;
+                margin-bottom: 0
+            }
+
+            .card-group>.card+.card {
+                margin-left: 0;
+                border-left: 0
+            }
+
+            .card-group>.card:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0
+            }
+
+            .card-group>.card:first-child .card-header,
+            .card-group>.card:first-child .card-img-top {
+                border-top-right-radius: 0
+            }
+
+            .card-group>.card:first-child .card-footer,
+            .card-group>.card:first-child .card-img-bottom {
+                border-bottom-right-radius: 0
+            }
+
+            .card-group>.card:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0
+            }
+
+            .card-group>.card:last-child .card-header,
+            .card-group>.card:last-child .card-img-top {
+                border-top-left-radius: 0
+            }
+
+            .card-group>.card:last-child .card-footer,
+            .card-group>.card:last-child .card-img-bottom {
+                border-bottom-left-radius: 0
+            }
+
+            .card-group>.card:only-child {
+                border-radius: .25rem
+            }
+
+            .card-group>.card:only-child .card-header,
+            .card-group>.card:only-child .card-img-top {
+                border-top-left-radius: .25rem;
+                border-top-right-radius: .25rem
+            }
+
+            .card-group>.card:only-child .card-footer,
+            .card-group>.card:only-child .card-img-bottom {
+                border-bottom-right-radius: .25rem;
+                border-bottom-left-radius: .25rem
+            }
+
+            .card-group>.card:not(:first-child):not(:last-child):not(:only-child) {
+                border-radius: 0
+            }
+
+            .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-footer,
+            .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-header,
+            .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-bottom,
+            .card-group>.card:not(:first-child):not(:last-child):not(:only-child) .card-img-top {
+                border-radius: 0
+            }
+        }
+
+        .card-columns .card {
+            margin-bottom: .75rem
+        }
+
+        @media (min-width:576px) {
+            .card-columns {
+                -webkit-column-count: 3;
+                -moz-column-count: 3;
+                column-count: 3;
+                -webkit-column-gap: 1.25rem;
+                -moz-column-gap: 1.25rem;
+                column-gap: 1.25rem;
+                orphans: 1;
+                widows: 1
+            }
+
+            .card-columns .card {
+                display: inline-block;
+                width: 100%
+            }
+        }
+
+        .accordion .card {
+            overflow: hidden
+        }
+
+        .accordion .card:not(:first-of-type) .card-header:first-child {
+            border-radius: 0
+        }
+
+        .accordion .card:not(:first-of-type):not(:last-of-type) {
+            border-bottom: 0;
+            border-radius: 0
+        }
+
+        .accordion .card:first-of-type {
+            border-bottom: 0;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0
+        }
+
+        .collapse:not(.show) {
+            display: none
+        }
+
+        .accordion .card:last-of-type {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0
+        }
+
+        .accordion .card .card-header {
+            margin-bottom: -1px
+        }
+
+        #main {
+            margin: 50px 0;
+        }
+
+        #main #faq .card {
+            margin-bottom: 30px;
+            border: 0;
+        }
+
+        #main #faq .card .card-header {
+            border: 0;
+            -webkit-box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            border-radius: 2px;
+            padding: 0;
+        }
+
+        #main #faq .card .card-header .btn-header-link {
+            color: #fff;
+            display: block;
+            text-align: left;
+            background: #FFE472;
+            color: #222;
+            padding: 20px;
+        }
+
+        #main #faq .card .card-header .btn-header-link:after {
+            content: "\f107";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            float: right;
+        }
+
+        #main #faq .card .card-header .btn-header-link.collapsed {
+            background: #AA221E;
+            color: #fff;
+        }
+
+        #main #faq .card .card-header .btn-header-link.collapsed:after {
+            content: "\f106";
+        }
+
+        #main #faq .card .collapsing {
+            background: #FFE472;
+            line-height: 30px;
+        }
+
+        #main #faq .card .collapse {
+            border: 0;
+        }
+
+        #main #faq .card .collapse.show {
+            background: #FFE472;
+            line-height: 30px;
+            color: #222;
+        }
+
+        .collapsing {
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            transition: height .35s ease
+        }
+
+        @media screen and (prefers-reduced-motion:reduce) {
+            .collapsing {
+                transition: none
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -66,8 +436,270 @@
 
                 9:30 AM TO 8:00 PM<br>
                 <br>
+                <div class="container">
+                    <h1>Download Brouchure</h1>
+                    <div id="main">
+                        <div class="container">
+                            <div class="accordion" id="faq">
+                                <div class="card">
+                                    <div class="card-header" id="faqhead1">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq1" aria-expanded="true" aria-controls="faq1">BATH
+                                            FIXTURE</a>
+                                    </div>
 
-                <h6>Type: </h6>
+                                    <div id="faq1" class="collapse" aria-labelledby="faqhead1" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1OvzR0d4_D3Oylq13EenN6rhPfw-K2G6P?usp=sharing">CERA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1yOzeUjnWvEJR51XTD5QGpIjZ6bstXQyM?usp=sharing">ESSESS</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1JNyyNZCILl82XaCxbRyEvbs51P64CCyM?usp=sharing">GROHE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1JUmiyVhgws5SO58LG43aWlU0swkugUZX?usp=sharing">HINDWARE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1UccmcPNTM2OCayv_xK8HcMME3dC8nWvW?usp=sharing">JAGUAR</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1KD5Nj7txZyYBR_V2M7ASZu7U0_B0G6OX?usp=sharing">KOHLER</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1RF0ZhLcN1m3wf41wlalNHGt-wYbVov3d?usp=sharing">MARC</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1ZC_UapHH8rj52vQM-pk1hA-yxH1vNCm8?usp=sharing">PARRYWARE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1jsQgL9lVIDbKCPN2umb4TcBQAFoR6ON5?usp=sharing">SUNTAPES</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead2">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq2" aria-expanded="true" aria-controls="faq2"> BATH TUBS AND
+                                            SPA</a>
+                                    </div>
+
+                                    <div id="faq2" class="collapse" aria-labelledby="faqhead2" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1N3x9jpE_IU9F4bydrElwLOpnVl4IFoZL?usp=sharing">COLSTON</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1ZCGL4GqyEfg1vxmlp05zxsvPUoqpSfXn?usp=sharing">JAGUAR</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1pFSQLqAHC7eFLt3g0EmC6MfpcifXgh6J?usp=sharing">KOHLER0</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead3">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq3" aria-expanded="true" aria-controls="faq3">KITCHEN
+                                            SINK</a>
+                                    </div>
+
+                                    <div id="faq3" class="collapse" aria-labelledby="faqhead3" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1pFSQLqAHC7eFLt3g0EmC6MfpcifXgh6J?usp=sharing">CARYSIL</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <div class="card-header" id="faqhead4">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq4" aria-expanded="true" aria-controls="faq4"> PRESSURE
+                                            PUMP</a>
+                                    </div>
+
+                                    <div id="faq4" class="collapse" aria-labelledby="faqhead4" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1Siun6qXCA5z_62T48542Pu6r9G9NgGSu?usp=sharing">GRUNDFOS</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1x8hUdPvZtpx5mwDWgX-uy21RAOJA28Eb?usp=sharing">LUBI</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead5">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq5" aria-expanded="true" aria-controls="faq5">SANITARY
+                                            WARE</a>
+                                    </div>
+
+                                    <div id="faq5" class="collapse" aria-labelledby="faqhead5" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1H3xecRDqjh4yUtcryK5NuVS10r3n7TW2?usp=sharing">AMERICAN</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1-JxO9v59PRIIBqF6SvMu55tvyFAADHt9?usp=sharing">CERA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1SMGWO3uROwWIyGX3WMZfvCacwcXF7rBi?usp=sharing">DURAVIT</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1r2R-wQ1nRmgiDoI1ajQ97zNLlUaRZIJL?usp=sharing">HINDWARE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1UCJaCCloAC5djExA5Zp7FmIG4IabqLV_?usp=sharing">JAGUAR</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1yFVye6x3NrddRF9U7dvnXWK6KOLFSYlo?usp=sharing">KOHLER</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1MM7S6nP6F3buoiz9fG0TpIQEz5MQv7H-?usp=sharing">PARRYWARE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1cmqhORqZ2f27KwzSP58iXAO9UAgf41tM?usp=sharing">RACY</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead6">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq6" aria-expanded="true" aria-controls="faq6"> SENSOR
+                                            PRODUCT</a>
+                                    </div>
+
+                                    <div id="faq6" class="collapse" aria-labelledby="faqhead6" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/18qFXpfLMni6zOjkEEMzwZ8Q6e-NSbUuK?usp=sharing">BHARAT
+                                                        PHOTON</a></li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/18qFXpfLMni6zOjkEEMzwZ8Q6e-NSbUuK?usp=sharing">CERA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/196byw9ZSZ6bSxQJmimH8PYC5wqklPDPU?usp=sharing">JAGUAR</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1pyScURVuVL5cbyiPkmCW0lo6xDAsCw9p?usp=sharing">PARRYWARE</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead7">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq7" aria-expanded="true" aria-controls="faq7">TERRACOTA
+                                            JALI</a>
+                                    </div>
+
+                                    <div id="faq7" class="collapse" aria-labelledby="faqhead7" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1PTFW6YEZFK9WviIh1rentVrYsQb-X5Sw?usp=sharing">MITTIKING</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1kvR7W7QAbXrzMZeS0_mnodcempW7ZFno?usp=sharing">OTHERS</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="faqhead8">
+                                        <a href="#" class="btn btn-header-link collapsed" data-toggle="collapse"
+                                            data-target="#faq8" aria-expanded="true" aria-controls="faq8">TILES</a>
+                                    </div>
+
+                                    <div id="faq8" class="collapse" aria-labelledby="faqhead8" data-parent="#faq">
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1uaODlvQXqPYvxRx7Z9nNer_4dJJSYZYD?usp=sharing">ARMANO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1TpLSLZxkzj5lohCoCyklIres0vH9JU_K?usp=sharing">EXXARO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1a2HnYhqmnx43D7c0etQxeWgby5hC9Jcj?usp=sharing">IBIZA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1QfX6P9jimHQdzYwroJyAu1oXpXiG8hy5?usp=sharing">ICON</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1VXNdG2s211encaK2c8x453UpPDfWtz9X?usp=sharing">ITACA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1TZEr00yqsnOZr8lsCxLqz6kxDX5KhBYl?usp=sharing">ITALICA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1GGZ9WvBGrH9fYELQ8Cg69I7KHkcHUfRg?usp=sharing">KAJARIA</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1gO1HLOTjBSn0u9pdFd-l0yxnQXnarIjz?usp=sharing">MOSART</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1StimPlSfIOJXK8uDu8D5IgTyCiHpODkd?usp=sharing">MOTO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1Lx8esCh9kF6_0aezhIhyWC7ifXzvF5JQ?usp=sharing">NAXICON</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1s2ChLXwn5-NH8yk-8FeowmFAUMEMRFPn?usp=sharing">PICOLO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1hgQWIP3agvwr4-9MvsMUk8SF7nb-1Lz4?usp=sharing">RESTILE</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1U9jMQlsvj9cv22YParSCcNQ1UqaBlx1p?usp=sharing">SIMERO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1Kqen5xga4yFO38DZ5YQRtlUizOGG-Ett?usp=sharing">SIMPOLO</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1JHdkUvZDWfmQ3zIiU968CsInPZknZqjb?usp=sharing">SUBWAY</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://drive.google.com/drive/folders/1zI4ZVqToVYCRS1aYb_wwFy08OyxH0xyp?usp=sharing">SUN
+                                                        HEART</a></li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <h6>Type: </h6>
                 <div class="selectdiv">
                     <label>
                         <select class="filterby">
@@ -128,7 +760,7 @@
                         </select>
                     </label>
                 </div>
-                <br><br><br>
+                <br><br><br> -->
                 <!-- <p>Test: </p>
                 <select class="filterby">
                     <option value="all">All Locations</option>
@@ -138,161 +770,8 @@
                 </select> -->
 
 
-                <div id="FilterContainer">
-                    <div class="FIXTURE CERA"><a
-                            href="https://drive.google.com/drive/folders/1OvzR0d4_D3Oylq13EenN6rhPfw-K2G6P?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE ESSESS"><a
-                            href="https://drive.google.com/drive/folders/1yOzeUjnWvEJR51XTD5QGpIjZ6bstXQyM?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE GROHE"><a
-                            href="https://drive.google.com/drive/folders/1JNyyNZCILl82XaCxbRyEvbs51P64CCyM?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE HINDWARE"><a
-                            href="https://drive.google.com/drive/folders/1JUmiyVhgws5SO58LG43aWlU0swkugUZX?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE JAGUAR"><a
-                            href="https://drive.google.com/drive/folders/1UccmcPNTM2OCayv_xK8HcMME3dC8nWvW?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE KOHLER"><a
-                            href="https://drive.google.com/drive/folders/1KD5Nj7txZyYBR_V2M7ASZu7U0_B0G6OX?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE MARC"><a
-                            href="https://drive.google.com/drive/folders/1RF0ZhLcN1m3wf41wlalNHGt-wYbVov3d?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE PARRYWARE"><a
-                            href="https://drive.google.com/drive/folders/1ZC_UapHH8rj52vQM-pk1hA-yxH1vNCm8?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="FIXTURE SUNTAPES"><a
-                            href="https://drive.google.com/drive/folders/1jsQgL9lVIDbKCPN2umb4TcBQAFoR6ON5?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="TUBS COLSTON"><a
-                            href="https://drive.google.com/drive/folders/1N3x9jpE_IU9F4bydrElwLOpnVl4IFoZL?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TUBS JAGUAR"><a
-                            href="https://drive.google.com/drive/folders/1ZCGL4GqyEfg1vxmlp05zxsvPUoqpSfXn?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TUBS KOHLER0"><a
-                            href="https://drive.google.com/drive/folders/1pFSQLqAHC7eFLt3g0EmC6MfpcifXgh6J?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="KITCHEN CARYSIL"><a
-                            href="https://drive.google.com/drive/folders/1pFSQLqAHC7eFLt3g0EmC6MfpcifXgh6J?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="PRESSURE GRUNDFOS"><a
-                            href="https://drive.google.com/drive/folders/1Siun6qXCA5z_62T48542Pu6r9G9NgGSu?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="PRESSURE LUBI"><a
-                            href="https://drive.google.com/drive/folders/1x8hUdPvZtpx5mwDWgX-uy21RAOJA28Eb?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="SANITARY AMERICAN"><a
-                            href="https://drive.google.com/drive/folders/1H3xecRDqjh4yUtcryK5NuVS10r3n7TW2?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY CERA"><a
-                            href="https://drive.google.com/drive/folders/1-JxO9v59PRIIBqF6SvMu55tvyFAADHt9?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY DURAVIT"><a
-                            href="https://drive.google.com/drive/folders/1SMGWO3uROwWIyGX3WMZfvCacwcXF7rBi?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY HINDWARE"><a
-                            href="https://drive.google.com/drive/folders/1r2R-wQ1nRmgiDoI1ajQ97zNLlUaRZIJL?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY JAGUAR"><a
-                            href="https://drive.google.com/drive/folders/1UCJaCCloAC5djExA5Zp7FmIG4IabqLV_?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY KOHLER"><a
-                            href="https://drive.google.com/drive/folders/1yFVye6x3NrddRF9U7dvnXWK6KOLFSYlo?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY PARRYWARE"><a
-                            href="https://drive.google.com/drive/folders/1MM7S6nP6F3buoiz9fG0TpIQEz5MQv7H-?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SANITARY RACY"><a
-                            href="https://drive.google.com/drive/folders/1cmqhORqZ2f27KwzSP58iXAO9UAgf41tM?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="SENSOR BHARAT PHOTON"><a
-                            href="https://drive.google.com/drive/folders/18qFXpfLMni6zOjkEEMzwZ8Q6e-NSbUuK?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SENSOR CERA"><a
-                            href="https://drive.google.com/drive/folders/18qFXpfLMni6zOjkEEMzwZ8Q6e-NSbUuK?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SENSOR JAGUAR"><a
-                            href="https://drive.google.com/drive/folders/196byw9ZSZ6bSxQJmimH8PYC5wqklPDPU?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="SENSOR PARRYWARE"><a
-                            href="https://drive.google.com/drive/folders/1pyScURVuVL5cbyiPkmCW0lo6xDAsCw9p?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="TERRACOTA MITTIKING"><a
-                            href="https://drive.google.com/drive/folders/1PTFW6YEZFK9WviIh1rentVrYsQb-X5Sw?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TERRACOTA OTHERS"><a
-                            href="https://drive.google.com/drive/folders/1kvR7W7QAbXrzMZeS0_mnodcempW7ZFno?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                    <div class="TILES ARMANO"><a
-                            href="https://drive.google.com/drive/folders/1uaODlvQXqPYvxRx7Z9nNer_4dJJSYZYD?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES EXXARO"><a
-                            href="https://drive.google.com/drive/folders/1TpLSLZxkzj5lohCoCyklIres0vH9JU_K?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES IBIZA"><a
-                            href="https://drive.google.com/drive/folders/1a2HnYhqmnx43D7c0etQxeWgby5hC9Jcj?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES ICON"><a
-                            href="https://drive.google.com/drive/folders/1QfX6P9jimHQdzYwroJyAu1oXpXiG8hy5?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES ITACA"><a
-                            href="https://drive.google.com/drive/folders/1VXNdG2s211encaK2c8x453UpPDfWtz9X?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES ITALICA"><a
-                            href="https://drive.google.com/drive/folders/1TZEr00yqsnOZr8lsCxLqz6kxDX5KhBYl?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES KAJARIA"><a
-                            href="https://drive.google.com/drive/folders/1GGZ9WvBGrH9fYELQ8Cg69I7KHkcHUfRg?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES MOSART"><a
-                            href="https://drive.google.com/drive/folders/1gO1HLOTjBSn0u9pdFd-l0yxnQXnarIjz?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES MOTO"><a
-                            href="https://drive.google.com/drive/folders/1StimPlSfIOJXK8uDu8D5IgTyCiHpODkd?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES NAXICON"><a
-                            href="https://drive.google.com/drive/folders/1Lx8esCh9kF6_0aezhIhyWC7ifXzvF5JQ?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES PICOLO"><a
-                            href="https://drive.google.com/drive/folders/1s2ChLXwn5-NH8yk-8FeowmFAUMEMRFPn?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES RESTILE"><a
-                            href="https://drive.google.com/drive/folders/1hgQWIP3agvwr4-9MvsMUk8SF7nb-1Lz4?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES SIMERO"><a
-                            href="https://drive.google.com/drive/folders/1U9jMQlsvj9cv22YParSCcNQ1UqaBlx1p?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES SIMPOLO"><a
-                            href="https://drive.google.com/drive/folders/1Kqen5xga4yFO38DZ5YQRtlUizOGG-Ett?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES SUBWAY"><a
-                            href="https://drive.google.com/drive/folders/1JHdkUvZDWfmQ3zIiU968CsInPZknZqjb?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-                    <div class="TILES SUN HEART"><a
-                            href="https://drive.google.com/drive/folders/1zI4ZVqToVYCRS1aYb_wwFy08OyxH0xyp?usp=sharing"><i
-                                class="fa-solid fa-download"></i> <b>Brochure Link</b></a></div>
-
-
-                </div>
-                <br>
-                <a href=""><i class="fa-brands fa-instagram"></i></a> |  <a href=""><i class="fa-brands fa-facebook"></i></a> | <a href="">www.ceramicgallery.net</a> 
+                <a href=""><i class="fa-brands fa-instagram"></i></a> | <a href=""><i
+                        class="fa-brands fa-facebook"></i></a> | <a href="">www.ceramicgallery.net</a>
                 <!-- <p class="address">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, rerum.
                 </p>
@@ -305,18 +784,11 @@
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("div#FilterContainer").find("div").hide();
-        });
-        $("select.filterby").change(function () {
-            var filters = $.map($("select.filterby").toArray(), function (e) {
-                return $(e).val();
-            }).join(".");
-            $("div#FilterContainer").find("div").hide();
-            $("div#FilterContainer").find("div." + filters).show();
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
+
 </body>
 
 </html>
